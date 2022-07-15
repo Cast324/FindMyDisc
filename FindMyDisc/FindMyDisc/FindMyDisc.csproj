@@ -13,5 +13,19 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="FirebaseDatabase.net" Version="4.0.7" />
+    <PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="FirebaseDatabase.net" />
+    <None Remove="FirebaseAuthentication.net" />
+    <None Remove="ViewModels\" />
+    <None Remove="Models\" />
+    <None Remove="Refractored.MvvmHelpers" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>
