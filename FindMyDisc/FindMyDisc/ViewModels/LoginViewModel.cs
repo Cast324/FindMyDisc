@@ -37,7 +37,7 @@ namespace FindMyDisc.ViewModels
 
         private void Login()
         {
-            fb.CreateUser(Email, Password);
+            fb.Login(Email, Password);
         }
     }
 }

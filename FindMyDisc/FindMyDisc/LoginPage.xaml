@@ -9,9 +9,9 @@
 
     <StackLayout>
         <Label>Email</Label>
-        <Entry Keyboard="Email" BindingContext="{Binding Email}"></Entry>
+        <Entry Keyboard="Email" Text="{Binding Email}"></Entry>
         <Label>Password</Label>
-        <Entry IsPassword="True" BindingContext="{Binding Password}"></Entry>
+        <Entry IsPassword="True" Text="{Binding Password}"></Entry>
         <Button Text="Login!" Command="{Binding LoginCommand}"></Button>
     </StackLayout>
 
