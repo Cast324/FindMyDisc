@@ -12,9 +12,9 @@ namespace FindMyDisc
 {
     public class FirebaseAuthenticationService : IAuthenticationService
     {
-        public static string FirebaseClient = "***REMOVED***";
-        public static string FirebaseDatabaseSecrect = "***REMOVED***";
-        public static string FirebaseAPIKey = "***REMOVED***";
+        public static string FirebaseClient = "**Removed**";
+        public static string FirebaseDatabaseSecrect = "**Removed**";
+        public static string FirebaseAPIKey = "**Removed**";
 
         public FirebaseClient fc = new FirebaseClient(FirebaseClient,
                                    new FirebaseOptions { AuthTokenAsyncFactory = () => Task.FromResult(FirebaseDatabaseSecrect) });
