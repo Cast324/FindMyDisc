@@ -9,12 +9,12 @@ using Xamarin.Forms;
 
 namespace FindMyDisc
 {
-    public partial class MainPage : ContentPage
+    public partial class LoginPage : ContentPage
     {
-        public MainPage()
+        public LoginPage()
         {
             InitializeComponent();
-            BindingContext = new LoginViewModel();
+            BindingContext = new LoginViewModel(Navigation, this);
         }
     }
 }

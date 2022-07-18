@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:ViewModels="clr-namespace:FindMyDisc.ViewModels"
+             ios:Page.UseSafeArea="True"
+             x:DataType="ViewModels:HomeViewModel"
+             x:Class="FindMyDisc.Views.HomePage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Testing"></Label>
+            <Button Text="Logout!" Command="{Binding LogoutCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

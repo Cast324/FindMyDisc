@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Windows.Input;
+using FindMyDisc.Views;
 using MvvmHelpers;
 using MvvmHelpers.Commands;
+using Xamarin.Forms;
 
 namespace FindMyDisc.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
+        #region Properties
+
+        private INavigation mNavigation { get; set; }
+
         private string _Email;
         public string Email
         {
@@ -28,16 +34,44 @@ namespace FindMyDisc.ViewModels
             set => SetProperty(ref _LoginCommand, value);
         }
 
-        public FirebaseManager fb = new FirebaseManager();
-
-        public LoginViewModel()
+        private ICommand _CreateUserCommand;
+        public ICommand CreateUserCommand
         {
-            LoginCommand = new Command(Login);
+            get => _CreateUserCommand;
+            set => SetProperty(ref _CreateUserCommand, value);
         }
 
-        private void Login()
+        private IAuthenticationService mAuthService { get; }
+
+        private LoginPage mLoginPage { get; set; }
+
+        #endregion
+
+        public LoginViewModel(INavigation navigation, IAuthenticationService authService, LoginPage loginPage)
         {
-            fb.Login(Email, Password);
+            mNavigation = navigation;
+            mAuthService = authService;
+            mLoginPage = loginPage;
+            LoginCommand = new MvvmHelpers.Commands.Command(Login);
+            CreateUserCommand = new MvvmHelpers.Commands.Command(CreateUser);
+        }
+
+        public LoginViewModel(INavigation navigation, LoginPage loginPage) : this(navigation, DependencyService.Get<IAuthenticationService>(), loginPage)
+        {
+            
+        }
+
+        private void CreateUser()
+        {
+            mAuthService.CreateUser(Email, Password);
+        }
+
+        private async void Login()
+        {
+            var result = await mAuthService.Login(Email, Password);
+            if (result) {
+                App.Current.MainPage = new NavigationPage(new HomePage());
+            }
         }
     }
 }

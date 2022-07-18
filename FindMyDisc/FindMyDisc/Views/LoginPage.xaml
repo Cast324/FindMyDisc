@@ -5,7 +5,7 @@
              xmlns:ViewModels="clr-namespace:FindMyDisc.ViewModels"
              ios:Page.UseSafeArea="True"
              x:DataType="ViewModels:LoginViewModel"
-             x:Class="FindMyDisc.MainPage">
+             x:Class="FindMyDisc.LoginPage">
 
     <StackLayout>
         <Label>Email</Label>
@@ -13,6 +13,7 @@
         <Label>Password</Label>
         <Entry IsPassword="True" Text="{Binding Password}"></Entry>
         <Button Text="Login!" Command="{Binding LoginCommand}"></Button>
+        <Button Text="Create User" Command="{Binding CreateUserCommand}"></Button>
     </StackLayout>
 
 </ContentPage>
