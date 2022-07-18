@@ -39,6 +39,7 @@ namespace FindMyDisc
                 var auth = await ap.SignInWithEmailAndPasswordAsync(email, password);
                 var content = await auth.GetFreshAuthAsync();
                 var serializedcontnet = JsonConvert.SerializeObject(content);
+
                 Preferences.Set("MyFirebaseRefreshToken", serializedcontnet);
                 return true;
             }
