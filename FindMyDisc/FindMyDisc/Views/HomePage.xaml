@@ -4,6 +4,7 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:ViewModels="clr-namespace:FindMyDisc.ViewModels"
              ios:Page.UseSafeArea="True"
+             Shell.PresentationMode="Animated"
              x:DataType="ViewModels:HomeViewModel"
              x:Class="FindMyDisc.Views.HomePage">
 

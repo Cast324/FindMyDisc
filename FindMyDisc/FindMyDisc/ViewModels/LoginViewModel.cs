@@ -11,8 +11,6 @@ namespace FindMyDisc.ViewModels
     {
         #region Properties
 
-        private INavigation mNavigation { get; set; }
-
         private string _Email;
         public string Email
         {
@@ -43,20 +41,17 @@ namespace FindMyDisc.ViewModels
 
         private IAuthenticationService mAuthService { get; }
 
-        private LoginPage mLoginPage { get; set; }
 
         #endregion
 
-        public LoginViewModel(INavigation navigation, IAuthenticationService authService, LoginPage loginPage)
+        public LoginViewModel(IAuthenticationService authService)
         {
-            mNavigation = navigation;
             mAuthService = authService;
-            mLoginPage = loginPage;
             LoginCommand = new MvvmHelpers.Commands.Command(Login);
             CreateUserCommand = new MvvmHelpers.Commands.Command(CreateUser);
         }
 
-        public LoginViewModel(INavigation navigation, LoginPage loginPage) : this(navigation, DependencyService.Get<IAuthenticationService>(), loginPage)
+        public LoginViewModel() : this(DependencyService.Get<IAuthenticationService>())
         {
             
         }
@@ -70,7 +65,7 @@ namespace FindMyDisc.ViewModels
         {
             var result = await mAuthService.Login(Email, Password);
             if (result) {
-                App.Current.MainPage = new NavigationPage(new HomePage());
+                await Shell.Current.GoToAsync($"//Main");
             }
         }
     }

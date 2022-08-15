@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using FindMyDisc.ViewModels;
 using Xamarin.Forms;
 
-namespace FindMyDisc
+namespace FindMyDisc.Views
 {
     public partial class LoginPage : ContentPage
     {
         public LoginPage()
         {
             InitializeComponent();
-            BindingContext = new LoginViewModel(Navigation, this);
+            BindingContext = new LoginViewModel();
         }
     }
 }

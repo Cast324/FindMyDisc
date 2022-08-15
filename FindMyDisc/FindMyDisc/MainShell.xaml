@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:FindMyDisc.Views"
+    FlyoutBehavior="Disabled"
+    x:Class="FindMyDisc.MainShell">
+    <TabBar>
+        <ShellContent Route="Startup" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate view:StartupPage}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="Login" Shell.FlyoutBehavior="Disabled" Shell.PresentationMode="NotAnimated" ContentTemplate="{DataTemplate view:LoginPage}" />
+    </TabBar>
+
+    <TabBar Route="Main">
+        <Tab Title="Home">
+            <view:HomePage Title="Home" />
+        </Tab>
+    </TabBar>
+</Shell>

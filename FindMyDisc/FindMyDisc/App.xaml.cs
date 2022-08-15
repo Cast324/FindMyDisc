@@ -14,17 +14,17 @@ namespace FindMyDisc
 
             DependencyService.RegisterSingleton<IAuthenticationService>(new FirebaseAuthenticationService());
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new MainShell();
 
 
-            if (!string.IsNullOrEmpty(Preferences.Get("MyFirebaseRefreshToken", "")))
-            {
-                MainPage = new NavigationPage(new HomePage());
-            }
-            else
-            {
-                MainPage = new NavigationPage(new LoginPage());
-            }
+            //if (!string.IsNullOrEmpty(Preferences.Get("MyFirebaseRefreshToken", "")))
+            //{
+            //    MainPage = new NavigationPage(new HomePage());
+            //}
+            //else
+            //{
+            //    MainPage = new NavigationPage(new LoginPage());
+            //}
         }
 
         protected override void OnStart ()

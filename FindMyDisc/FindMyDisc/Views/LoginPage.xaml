@@ -5,7 +5,7 @@
              xmlns:ViewModels="clr-namespace:FindMyDisc.ViewModels"
              ios:Page.UseSafeArea="True"
              x:DataType="ViewModels:LoginViewModel"
-             x:Class="FindMyDisc.LoginPage">
+             x:Class="FindMyDisc.Views.LoginPage">
 
     <StackLayout>
         <Label>Email</Label>

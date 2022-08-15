@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using FindMyDisc.Models;
+using FindMyDisc.Views;
 using Firebase.Auth;
 using Firebase.Database;
 using Firebase.Database.Query;
@@ -59,7 +60,7 @@ namespace FindMyDisc
         public void Logout()
         {
             Preferences.Remove("MyFirebaseRefreshToken");
-            App.Current.MainPage = new NavigationPage(new LoginPage());
+            Shell.Current.GoToAsync("//Login", false);
         }
 
         public async Task<bool> RefreshAuth()
