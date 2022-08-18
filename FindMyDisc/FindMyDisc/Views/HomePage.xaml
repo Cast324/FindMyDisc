@@ -9,10 +9,9 @@
              x:Class="FindMyDisc.Views.HomePage">
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Testing"></Label>
-            <Button Text="Logout!" Command="{Binding LogoutCommand}"></Button>
-        </StackLayout>
+        <CollectionView ItemsSource="{Binding ">
+            
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>
 

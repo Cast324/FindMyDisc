@@ -15,7 +15,10 @@
 
     <TabBar Route="Main">
         <Tab Title="Home">
-            <view:HomePage Title="Home" />
+            <ShellContent ContentTemplate="{DataTemplate view:HomePage}" Title="Home" />
+        </Tab>
+        <Tab Title="Profile">
+            <ShellContent ContentTemplate="{DataTemplate view:ProfilePage}" Title="Profile" />
         </Tab>
     </TabBar>
 </Shell>

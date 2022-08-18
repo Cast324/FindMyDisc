@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using FindMyDisc.ViewModels;
 using Xamarin.Forms;
 
 namespace FindMyDisc.Views
@@ -10,6 +10,7 @@ namespace FindMyDisc.Views
         public ProfilePage()
         {
             InitializeComponent();
+            BindingContext = new ProfileViewModel();
         }
     }
 }
