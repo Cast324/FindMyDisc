@@ -13,9 +13,9 @@ namespace FindMyDisc
 {
     public class FirebaseAuthenticationService : IAuthenticationService
     {
-        public static string FirebaseClient = "**Removed**";
-        public static string FirebaseDatabaseSecrect = "**Removed**";
-        public static string FirebaseAPIKey = "**Removed**";
+        public static string FirebaseClient = "https://find-my-disc-default-rtdb.firebaseio.com/";
+        public static string FirebaseDatabaseSecrect = "JjFgXn8gjBPQ5wIru0dqwDrcLRpXnxRMKmltj5tg";
+        public static string FirebaseAPIKey = "AIzaSyBVohCNKt-SvLFqt424JtGVenbGZBa_-4Q";
 
         public FirebaseClient fc = new FirebaseClient(FirebaseClient,
                                    new FirebaseOptions { AuthTokenAsyncFactory = () => Task.FromResult(FirebaseDatabaseSecrect) });
@@ -27,10 +27,9 @@ namespace FindMyDisc
 
         }
 
-        public async void AddTestData()
+        public FirebaseClient GetFirebaseClient()
         {
-            await fc.Child("ItemTable")
-         .PostAsync(new UserPostModel() { Description = "Testing to see if this works", Date = DateTime.Now.ToString() });
+            return fc;
         }
 
         public async Task<bool> Login(string email, string password)

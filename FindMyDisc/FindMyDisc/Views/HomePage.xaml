@@ -1,16 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             xmlns:ViewModels="clr-namespace:FindMyDisc.ViewModels"
-             ios:Page.UseSafeArea="True"
-             Shell.PresentationMode="Animated"
-             x:DataType="ViewModels:HomeViewModel"
-             x:Class="FindMyDisc.Views.HomePage">
+<ContentPage
+    x:Class="FindMyDisc.Views.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Models="clr-namespace:FindMyDisc.Models"
+    xmlns:ViewModels="clr-namespace:FindMyDisc.ViewModels"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="True"
+    x:DataType="ViewModels:HomeViewModel"
+    Shell.PresentationMode="Animated">
 
     <ContentPage.Content>
-        <CollectionView ItemsSource="{Binding ">
-            
+        <CollectionView ItemsSource="{Binding DatabaseItems}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="Models:UserPostModel">
+                    <Label Text="{Binding Description}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
         </CollectionView>
     </ContentPage.Content>
 </ContentPage>
